@@ -9,10 +9,10 @@ permissions:
   contents: read
 
 jobs:
-  update_minor_draft:
-    if: contains(github.event.pull_request.labels.*.name, 'minor')
+  update_major_draft:
+    if: contains(github.event.pull_request.labels.*.name, 'major')
     permissions:
-      # write permission is required to create a github release
+      pull-requests: write
       contents: write
     runs-on: ubuntu-latest
     steps:
@@ -22,12 +22,23 @@ jobs:
            commitish: main
         env:
           GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
-          
-          
+  update_minor_draft:
+    if: contains(github.event.pull_request.labels.*.name, 'minor')
+    permissions:
+      pull-requests: write
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@v5
+        with:
+           config-name: release-drafter-minor.yml
+           commitish: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
   update_patch_draft:
     if: contains(github.event.pull_request.labels.*.name, 'patch')
     permissions:
-      # write permission is required to create a github release
+      pull-requests: write
       contents: write
     runs-on: ubuntu-latest
     steps:
