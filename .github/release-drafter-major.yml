@@ -23,10 +23,13 @@ include-labels:
       - 'bug-release'
       - 'minor'
       - 'patch'
+      - 'major'
+exclude-labels:
+  - 'skip-changelog'
 
 # 태그 버전 자동 추론
 version-resolver:
-  default: minor
+  default: major
 
 template: |
   ## Changes
