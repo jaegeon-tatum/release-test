@@ -5,14 +5,32 @@ on:
     types: [opened, reopened, synchronize]
     branches:
       - version
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    branches:
+      - version
+      
 permissions:
   contents: read
 
 jobs:
+  update_major_draft:
+    if: contains(github.event.pull_request.labels.*.name, 'major')
+    permissions:
+      pull-requests: write
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@v5
+        with:
+           config-name: release-drafter-major.yml
+           commitish: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
   update_minor_draft:
     if: contains(github.event.pull_request.labels.*.name, 'minor')
     permissions:
-      # write permission is required to create a github release
+      pull-requests: write
       contents: write
     runs-on: ubuntu-latest
     steps:
@@ -22,12 +40,10 @@ jobs:
            commitish: main
         env:
           GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
-          
-          
   update_patch_draft:
     if: contains(github.event.pull_request.labels.*.name, 'patch')
     permissions:
-      # write permission is required to create a github release
+      pull-requests: write
       contents: write
     runs-on: ubuntu-latest
     steps:
