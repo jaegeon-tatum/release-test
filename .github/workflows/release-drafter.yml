@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: release-drafter/release-drafter@v5
         with:
-           config-name: release-drafter-minor.yml
+           config-name: release-drafter-major.yml
            commitish: main
         env:
           GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
