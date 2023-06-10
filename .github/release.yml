@@ -1,1 +1,11 @@
-
+changelog:
+  categories:
+    - title: 🏕 Features
+      labels:
+        - feature-release
+    - title: 🛠 BugFix
+      labels:
+        - bug-release
+    - title: 👒 Dependencies
+      labels:
+        - dependency-release
