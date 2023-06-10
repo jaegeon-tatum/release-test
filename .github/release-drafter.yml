@@ -9,11 +9,14 @@ categories:
       - 'bug-release'
       
   - title: 'Others Changes'
-    labels:
+    label:
       - '*'
       
 change-template: '- $TITLE by @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+include-labels:
+      - 'feature-release'
+      - 'bug-release'
 version-resolver:
   major:
     labels:
