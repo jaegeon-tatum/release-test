@@ -24,16 +24,13 @@ include-labels:
 
 # 태그 버전 자동 추론
 version-resolver:
-  major:
-    labels:
-      - 'major'
   minor:
     labels:
-      - 'minor'
+      - 'type: minor'
   patch:
     labels:
-      - 'patch'
-  default: minor
+      - 'type: patch'
+  default: patch
 
 template: |
   ## Changes
