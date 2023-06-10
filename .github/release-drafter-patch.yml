@@ -18,11 +18,15 @@ change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' 
 
 # 포함할 태그 정의, 이 속성이 없다면 모든 병합 이력이 출력됨
+
 include-labels:
       - 'feature-release'
       - 'bug-release'
       - 'minor'
       - 'patch'
+      - 'major'
+exclude-labels:
+  - 'skip-changelog'
 
 # 태그 버전 자동 추론
 version-resolver:
