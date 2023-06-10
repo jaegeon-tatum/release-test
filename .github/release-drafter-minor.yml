@@ -32,3 +32,8 @@ template: |
   ## Changes
 
   $CHANGES
+
+autolabeler:
+  - label: 'skip-changelog'
+    branch:
+      - '/version/'
