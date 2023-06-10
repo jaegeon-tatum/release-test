@@ -12,7 +12,7 @@ categories:
     labels:
       - '*'
       
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-template: '- $TITLE by @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 version-resolver:
   major:
@@ -24,7 +24,6 @@ version-resolver:
   patch:
     labels:
       - 'patch'
-  default: patch
 template: |
   ## Changes
 
