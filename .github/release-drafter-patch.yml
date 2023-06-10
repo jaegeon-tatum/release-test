@@ -22,9 +22,7 @@ change-title-escapes: '\<*_&'
 include-labels:
       - 'feature-release'
       - 'bug-release'
-      - 'minor'
-      - 'patch'
-      - 'major'
+
 exclude-labels:
   - 'skip-changelog'
 
