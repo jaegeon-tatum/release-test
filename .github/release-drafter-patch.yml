@@ -26,12 +26,6 @@ include-labels:
 
 # 태그 버전 자동 추론
 version-resolver:
-  minor:
-    labels:
-      - 'minor'
-  patch:
-    labels:
-      - 'patch'
   default: patch
 
 template: |
