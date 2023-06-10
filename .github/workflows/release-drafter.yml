@@ -29,6 +29,7 @@ jobs:
         # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
         with:
            config-name: release-drafter.yml
+           commitish: main
         #   disable-autolabeler: true
         env:
           GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
