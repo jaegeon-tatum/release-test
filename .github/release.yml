@@ -6,6 +6,6 @@ changelog:
     - title: 🛠 BugFix
       labels:
         - bug-release
-    - title: 👒 Dependencies
+    - title: Other Changes
       labels:
-        - dependency-release
+        - "*"
