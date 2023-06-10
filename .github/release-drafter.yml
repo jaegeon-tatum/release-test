@@ -28,3 +28,12 @@ template: |
   ## Changes
 
   $CHANGES
+  
+  
+autolabeler:
+  - label: 'bug'
+    branch:
+      - 'fix\/.+/'
+  - label: 'feature'
+    branch:
+      - 'feature\/.+/'
