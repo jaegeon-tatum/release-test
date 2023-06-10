@@ -5,6 +5,11 @@ on:
     types: [opened, reopened, synchronize]
     branches:
       - version
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    branches:
+      - version
+      
 permissions:
   contents: read
 
