@@ -1,0 +1,39 @@
+# 릴리즈 제목 이름
+name-template: 'v$RESOLVED_VERSION 🚀'
+
+# 태그 포맷
+tag-template: 'v$RESOLVED_VERSION'
+
+# 릴리즈노트 섹션 구분
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feature-release'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bug-release'
+      
+# 각 패치 내역에 대한 포맷 정의 [FE-XXX] 로그인 페이지 작성 @jaegeon-tatum (#164)
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&' 
+
+# 포함할 태그 정의, 이 속성이 없다면 모든 병합 이력이 출력됨
+include-labels:
+      - 'feature-release'
+      - 'bug-release'
+      - 'minor'
+      - 'patch'
+
+# 태그 버전 자동 추론
+version-resolver:
+  default: minor
+
+template: |
+  ## Changes
+
+  $CHANGES
+
+autolabeler:
+  - label: 'skip-changelog'
+    branch:
+      - '/version/'
