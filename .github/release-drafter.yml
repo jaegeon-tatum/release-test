@@ -21,15 +21,17 @@ change-title-escapes: '\<*_&'
 include-labels:
       - 'feature-release'
       - 'bug-release'
+      - 'minor'
+      - 'patch'
 
 # 태그 버전 자동 추론
 version-resolver:
   minor:
     labels:
-      - 'type: minor'
+      - 'minor'
   patch:
     labels:
-      - 'type: patch'
+      - 'patch'
   default: patch
 
 template: |
